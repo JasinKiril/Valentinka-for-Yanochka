@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Особенный день Святого Валентина</title>
+  <style>
+    body {
+      font-family: 'comic sans ms', sans-serif;
+      background-color: #f8f8f8;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    h1 {
+      color: #ff6384;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: #333;
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+
+    textarea {
+      width: 80%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+    }
+
+    button {
+      background-color: #ff6384;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      margin: 5px;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      filter: brightness(90%);
+    }
+
+    .button-container .runaway {
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <div id="startButtonContainer">
+    <button onclick="showFullPage()">Нажми на меня😊</button>
+  </div>
+
+  <div id="fullPage" style="display: none;">
+    <button onclick="showButtons()">Показать Варианты</button>
+    <h1>С Днем Всех Влюбленных💕!</h1>
+    <p>Yanochka! Пойдем гулять😁</p>
+    <div class="button-container" style="display: none;">
+      <button class="runaway" onmouseover="runAway()">Пойдем Пойдем🥰"</button>
+      
+      <a href="file:///C:/Sublime%20Text%203/Text.html">
+      <button onclick="showMessage()">С радостью😏</button>
+
+    </div>
+  </div>
+
+  <script>
+    function showFullPage() {
+      document.getElementById('startButtonContainer').style.display = 'none';
+      document.getElementById('fullPage').style.display = 'block';
+    }
+
+    function showButtons() {
+      const buttonContainer = document.querySelector('.button-container');
+      buttonContainer.style.display = 'flex';
+    }
+
+    function runAway() {
+      const runawayButton = document.querySelector('.runaway');
+      document.addEventListener('mousemove', (event) => {
+        runawayButton.style.left = event.clientX + 'px';
+        runawayButton.style.top = event.clientY + 'px';
+      });
+    }
+
+    function showMessage() {
+      const message = document.getElementById('loveMessage').value;
+      alert(message || "Сначала введите сообщение!");
+    }
+  </script>
+</body>
+</html>
